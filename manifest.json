@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Click for Duplicate Form Fields",
+  "description": "Auto Complete Duplicate Form Fields",
+  "version": "1.0",
+
+  "icons": {
+    "48": "icon.png"
+  },
+
+  "permissions": [
+    "tabs", "<all_urls>", "https://flexerasoftware.my.salesforce.com/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+    "content_scripts": [ {
+    "js": [ "jquery-3.1.1.min.js", "background.js" ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }],
+  
+  "background": {
+    "scripts": ["background.js", "duplicate.js", "jquery-3.1.1.min.js"],
+    "persistent": false
+  }
+}
