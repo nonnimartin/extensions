@@ -10,7 +10,7 @@
   },
 
   "permissions": [
-    "tabs", "<all_urls>", "https://flexerasoftware.my.salesforce.com/*"
+    "tabs", "<all_urls>", "https://*", "https://*/*", "http://*", "http://*/*"
   ],
 
   "browser_action": {
