@@ -1,25 +1,27 @@
 $(document).ready(function () {
 
+	var dispatchMouseEvent = function(target, var_args) {
+	  var e = document.createEvent("MouseEvents");
+	  e.initEvent.apply(e, Array.prototype.slice.call(arguments, 1))
+	  target.dispatchEvent(e)
+	};
 
-	//var inputs = document.getElementsByTagName('input')
+    var myDoc = document.getElementById('00NG000000COwcj_ilecell')
 
-	//console.log("Here's the seletor element" + $( "td#00NG000000COwcj_ilecell" ).html())
+    dispatchMouseEvent(myDoc, 'dblclick', true)
 
-	//$( "td#00NG000000COwcj_ilecell" ).dblclick();
+    //Setting values  - may need to make the selectors more intelligent
+    $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
+    
+    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+    	$( "#cas7_ileinner" ).text( "Closed" );
+    }
 
-	//var $resTd = $( "td#00NG000000COwcj_ilecell" )
-	var el = document.getElementById('dev#foo')
-	console.log(el.html)
-	el.ondblclick.call(el, {target: el})
-	//console.log('$resTd.length: ' + $resTd.length)
-	//console.log($resTd)
+    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+    	$( "#00NG0000009dNvI_ileinner" ).text( "Duplicate incident - multiple cases open for this issue." );
+    }
 
-	//$resTd.on('dblclick', function(e) {
-	//	console.log("I'm in ur dblclick")
-	//	this.ondblclick({target: this})
-	//})
-	//$resTd.trigger('focus').trigger('dblclick')
-
-	//console.log("Inputs = " + inputs.toString())
-
+    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+    	$( "#Product_ileinner" ).text( "Software Composition Analysis Enterprise Edition" );
+    }
 });
