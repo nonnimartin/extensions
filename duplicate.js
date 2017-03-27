@@ -6,9 +6,9 @@ $(document).ready(function () {
 	  target.dispatchEvent(e)
 	};
 
-    var myDoc = document.getElementById('00NG000000COwcj_ilecell')
+    var trigEl = document.getElementById('00NG000000COwcj_ilecell')
 
-    dispatchMouseEvent(myDoc, 'dblclick', true)
+    dispatchMouseEvent(trigEl, 'dblclick', true)
 
     //Setting values  - may need to make the selectors more intelligent
     $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);

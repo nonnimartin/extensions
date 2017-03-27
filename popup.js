@@ -1,6 +1,15 @@
-function execute() {
+function duplicate() {
   chrome.tabs.executeScript({
     file: 'duplicate.js'
   }); 
 }
-document.getElementById('clickme').addEventListener('click', execute);
+
+function close() {
+  chrome.tabs.executeScript({
+    file: 'closeFields.js'
+  }); 
+}
+
+document.getElementById('clickme').addEventListener('click', duplicate);
+
+document.getElementById('clickme2').addEventListener('click', close);
