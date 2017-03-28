@@ -6,14 +6,13 @@ $(document).ready(function () {
 	  target.dispatchEvent(e)
 	};
 
-    var trigEl = document.getElementById('00NG000000COwcj_ilecell')
-
-    dispatchMouseEvent(trigEl, 'dblclick', true)
-
-    var randomClick = $( ".pageDescription" )
+    var resCodeEl = document.getElementById('00NG000000COwcj_ilecell')
+    var clickOff = document.getElementById('section_header')
 
     //Setting values  - may need to make the selectors more intelligent
+    dispatchMouseEvent(resCodeEl, 'dblclick', true)
     $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
+    dispatchMouseEvent(clickOff, 'click', true)
     
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
     	var statusEl       = document.getElementById('cas7_ileinner')
@@ -32,8 +31,10 @@ $(document).ready(function () {
     }
 
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
-    	$( "#lookup01t1600000LsQZuProduct" ).val("", "Software Composition Analysis Enterprise Edition" );
+    	var prodEl = document.getElementById('Product_ileinner')
+        dispatchMouseEvent(prodEl, 'dblclick', true)
+        $( "#Product").val('Software Composition Analysis Enterprise Edition')
+        dispatchMouseEvent(clickOff, 'click', true)
     }
 
-    //randomClick.click()
 });
