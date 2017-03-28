@@ -10,18 +10,30 @@ $(document).ready(function () {
 
     dispatchMouseEvent(trigEl, 'dblclick', true)
 
+    var randomClick = $( ".pageDescription" )
+
     //Setting values  - may need to make the selectors more intelligent
     $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
     
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
-    	$( "#cas7_ileinner" ).text( "Closed" );
+    	var statusEl       = document.getElementById('cas7_ileinner')
+        var statusOkButton = $('input[type="button"][value="OK"]')
+        dispatchMouseEvent(statusEl, 'dblclick', true)
+        $( "#cas7 option[value='Closed']").prop('selected', true)
+        statusOkButton.click()
     }
 
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
-    	$( "#00NG0000009dNvI_ileinner" ).text( "Duplicate incident - multiple cases open for this issue." );
+        var resEl       = document.getElementById('00NG0000009dNvI_ileinner')
+        dispatchMouseEvent(resEl, 'dblclick', true)
+        $( "#00NG0000009dNvI").val('Duplicate incident - multiple cases open for this issue.')
+        var resOkButton = $('input[type="button"][value="OK"]')
+        statusOkButton.click()
     }
 
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
-    	$( "#Product_ileinner" ).text( "Software Composition Analysis Enterprise Edition" );
+    	$( "#lookup01t1600000LsQZuProduct" ).val("", "Software Composition Analysis Enterprise Edition" );
     }
+
+    //randomClick.click()
 });
