@@ -15,9 +15,13 @@ $(document).ready(function () {
     //Set status value
     var statEl       = document.getElementById('cas7_ileinner')
     dispatchMouseEvent(statEl, 'dblclick', true)
-    $( "#cas7 option[value='Closed']").prop('selected', true)
     var statusOkButton = $('input[type="button"][value="OK"]')
-    statusOkButton.click()
+    $( "#cas7 option[value='Closed']").prop('selected', true)
+
+    if ($( "#cas7 option[value='Closed']").prop('selected', true)) {
+        statusOkButton.click()
+    }
+    
     //var statusOkButton = $('input[type="button"][value="OK"]')
     // statusOkButton.click()
     //dispatchMouseEvent(clickOff, 'click', true)

@@ -27,7 +27,7 @@ $(document).ready(function () {
         dispatchMouseEvent(resEl, 'dblclick', true)
         $( "#00NG0000009dNvI").val('Duplicate incident - multiple cases open for this issue.')
         var resOkButton = $('input[type="button"][value="OK"]')
-        statusOkButton.click()
+        resOkButton.click()
     }
 
     if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
@@ -37,4 +37,11 @@ $(document).ready(function () {
         dispatchMouseEvent(clickOff, 'click', true)
     }
 
+    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+        var typeEl = document.getElementById('00NG000000DHTJt_ilecell')
+        dispatchMouseEvent(typeEl, 'dblclick', true)
+        $( "#00NG000000DHTJt option[value='Other']").prop('selected', true)
+        var typeOkButton = $('input[type="button"][value="OK"]')
+        typeOkButton.click()
+    }
 });
