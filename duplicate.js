@@ -37,4 +37,11 @@ $(document).ready(function () {
         dispatchMouseEvent(clickOff, 'click', true)
     }
 
+    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+    	var prodEl = document.getElementById('Product_ileinner')
+        dispatchMouseEvent(prodEl, 'dblclick', true)
+        $( "#Product").val('Software Composition Analysis Enterprise Edition')
+        dispatchMouseEvent(clickOff, 'click', true)
+    }
+
 });
