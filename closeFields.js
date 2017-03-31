@@ -6,38 +6,37 @@ $(document).ready(function () {
 	  target.dispatchEvent(e)
 	};
     
-    var trigEl = document.getElementById('cas7_ilecell')
+    //Clickoff for inside dialog box
+    var resCodeEl = document.getElementById('00NG000000COwcj_ilecell')
+    var clickOff = document.getElementById('section_header')
 
-    dispatchMouseEvent(trigEl, 'dblclick', true)
-    
     //Setting values  - may need to make the selectors more intelligent
-    $( "#cas7 option[value='Closed']").prop('selected', true);
-    
-    if ($( "#cas7 option[value='Closed']").prop('selected')) {
+    dispatchMouseEvent(resCodeEl, 'dblclick', true)
+    $( "#00NG000000COwcj option[value='Resolved by TSE']").prop('selected', true);
+    dispatchMouseEvent(clickOff, 'click', true)
 
-        var clickOk     = document.getElementById('cas7_ilecell')
-        var closeDialog = document.getElementById('InlineEditDialogX')
-
-        dispatchMouseEvent(clickOk, 'click', true)
-        dispatchMouseEvent(closeDialog, 'click', true)
-
-        if ($( "#cas7 option[value='Closed']").prop('selected')) {
-            
-            //Get resolution text value and then fill in default close settings
-            var resolutionText = prompt("Resolution Text:")
-            var trigEl = document.getElementById('00NG000000COwcj_ilecell')
-
-            //Resolution
-            $( "#00NG0000009dNvI_ileinner" ).text( resolutionText );
-            
-            //Default product text
-            $( "#Product_ileinner" ).text( "Software Composition Analysis Enterprise Edition" );
-            
-            //Click to reveal some needed elements
-            dispatchMouseEvent(trigEl, 'dblclick', true)
-            $( "#00NG000000COwcj option[value='Resolved by TSE']").prop('selected', true);
-
-        }
-
+    if ($( "#00NG000000COwcj option[value='Resolved by TSE']").prop('selected')) {
+        var statusEl       = document.getElementById('cas7_ileinner')
+        var statusOkButton = $('input[type="button"][value="OK"]')
+        dispatchMouseEvent(statusEl, 'dblclick', true)
+        $( "#cas7 option[value='Closed']").prop('selected', true)
+        statusOkButton.click()
     }
+
+    if ($( "#00NG000000COwcj option[value='Resolved by TSE']").prop('selected')) {
+        var resEl       = document.getElementById('00NG0000009dNvI_ileinner')
+        dispatchMouseEvent(resEl, 'dblclick', true)
+        var resolutionText = prompt("Resolution text: ")
+        $( "#00NG0000009dNvI").val(resolutionText)
+        var resOkButton = $('input[type="button"][value="OK"]')
+        resOkButton.click()
+    }
+
+    if ($( "#00NG000000COwcj option[value='Resolved by TSE']").prop('selected')) {
+        var prodEl = document.getElementById('Product_ileinner')
+        dispatchMouseEvent(prodEl, 'dblclick', true)
+        $( "#Product").val('Software Composition Analysis Enterprise Edition')
+        dispatchMouseEvent(clickOff, 'click', true)
+    }
+
 });
