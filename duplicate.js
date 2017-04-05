@@ -6,18 +6,8 @@ $(document).ready(function () {
 	  target.dispatchEvent(e)
 	};
 
-    var resCodeEl = document.getElementById('00NG000000COwcj_ilecell')
-    var clickOff = document.getElementById('section_header')
-
-    //Setting values  - may need to make the selectors more intelligent
-    setTimeout(function() { dispatchMouseEvent(resCodeEl, 'dblclick', true);}, 50);
-    //dispatchMouseEvent(resCodeEl, 'dblclick', true)
-    setTimeout(function() { $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);;}, 500);
-    //$( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
-    setTimeout(function() { dispatchMouseEvent(clickOff, 'click', true);}, 600);
-
     function setValues() {
-    	var statusEl       = document.getElementById('cas7_ileinner')
+        var statusEl       = document.getElementById('cas7_ileinner')
         var statusOkButton = $('input[type="button"][value="OK"]')
         dispatchMouseEvent(statusEl, 'dblclick', true)
         $( "#cas7 option[value='Closed']").prop('selected', true)
@@ -29,7 +19,7 @@ $(document).ready(function () {
         var resOkButton = $('input[type="button"][value="OK"]')
         resOkButton.click()
 
-    	var prodEl = document.getElementById('Product_ileinner')
+        var prodEl = document.getElementById('Product_ileinner')
         dispatchMouseEvent(prodEl, 'dblclick', true)
         $( "#Product").val('Software Composition Analysis Enterprise Edition')
         dispatchMouseEvent(clickOff, 'click', true)
@@ -41,6 +31,13 @@ $(document).ready(function () {
         typeOkButton.click()
     }
 
+    var resCodeEl = document.getElementById('00NG000000COwcj_ilecell')
+    var clickOff = document.getElementById('section_header')
+
+    //Setting values  - may need to make the selectors more intelligent
+    setTimeout(function() { dispatchMouseEvent(resCodeEl, 'dblclick', true);}, 50);
+    setTimeout(function() { $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);;}, 500);
+    setTimeout(function() { dispatchMouseEvent(clickOff, 'click', true);}, 600);
     setTimeout(function() { setValues();}, 700);
 
 });
