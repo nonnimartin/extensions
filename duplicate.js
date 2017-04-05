@@ -10,38 +10,37 @@ $(document).ready(function () {
     var clickOff = document.getElementById('section_header')
 
     //Setting values  - may need to make the selectors more intelligent
-    dispatchMouseEvent(resCodeEl, 'dblclick', true)
-    $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
-    dispatchMouseEvent(clickOff, 'click', true)
-    
-    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
+    setTimeout(function() { dispatchMouseEvent(resCodeEl, 'dblclick', true);}, 50);
+    //dispatchMouseEvent(resCodeEl, 'dblclick', true)
+    setTimeout(function() { $( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);;}, 500);
+    //$( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected', true);
+    setTimeout(function() { dispatchMouseEvent(clickOff, 'click', true);}, 600);
+
+    function setValues() {
     	var statusEl       = document.getElementById('cas7_ileinner')
         var statusOkButton = $('input[type="button"][value="OK"]')
         dispatchMouseEvent(statusEl, 'dblclick', true)
         $( "#cas7 option[value='Closed']").prop('selected', true)
         statusOkButton.click()
-    }
 
-    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
         var resEl       = document.getElementById('00NG0000009dNvI_ileinner')
         dispatchMouseEvent(resEl, 'dblclick', true)
         $( "#00NG0000009dNvI").val('Duplicate incident - multiple cases open for this issue.')
         var resOkButton = $('input[type="button"][value="OK"]')
         resOkButton.click()
-    }
 
-    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
     	var prodEl = document.getElementById('Product_ileinner')
         dispatchMouseEvent(prodEl, 'dblclick', true)
         $( "#Product").val('Software Composition Analysis Enterprise Edition')
         dispatchMouseEvent(clickOff, 'click', true)
-    }
 
-    if ($( "#00NG000000COwcj option[value='Duplicate Incident']").prop('selected')) {
         var typeEl = document.getElementById('00NG000000DHTJt_ilecell')
         dispatchMouseEvent(typeEl, 'dblclick', true)
         $( "#00NG000000DHTJt option[value='Other']").prop('selected', true)
         var typeOkButton = $('input[type="button"][value="OK"]')
         typeOkButton.click()
     }
+
+    setTimeout(function() { setValues();}, 700);
+
 });
