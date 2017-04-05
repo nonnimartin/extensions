@@ -15,7 +15,8 @@ $(document).ready(function () {
 
         var resEl       = document.getElementById('00NG0000009dNvI_ileinner')
         dispatchMouseEvent(resEl, 'dblclick', true)
-        var resolutionText = prompt("Resolution text: ")
+        var defaultResolutionText = $( "#00NG0000009dNvI").val()
+        var resolutionText = prompt("Resolution text: ", defaultResolutionText)
         $( "#00NG0000009dNvI").val(resolutionText)
         var resOkButton = $('input[type="button"][value="OK"]')
         resOkButton.click()
