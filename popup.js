@@ -10,6 +10,14 @@ function close() {
   }); 
 }
 
-document.getElementById('clickme').addEventListener('click', duplicate);
+function optOut() {
+  chrome.tabs.executeScript({
+    file: 'optOut.js'
+  }); 
+}
 
-document.getElementById('clickme2').addEventListener('click', close);
+document.getElementById('clickDupe').addEventListener('click', duplicate);
+
+document.getElementById('clickClose').addEventListener('click', close);
+
+document.getElementById('clickOpt').addEventListener('click', optOut);
