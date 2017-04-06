@@ -1,16 +1,16 @@
 {
   "manifest_version": 2,
 
-  "name": "Click for Duplicate Form Fields",
-  "description": "Auto Complete Duplicate Form Fields",
-  "version": "1.0",
+  "name": "Flex Salesforce Form Filler",
+  "description": "Making Salesforce less inconvenient",
+  "version": "1.1",
 
   "icons": {
     "48": "icon.png"
   },
 
   "permissions": [
-    "https://flexerasoftware.my.salesforce.com/*/*"],
+    "https://*.my.salesforce.com/*/*"],
 
   "browser_action": {
     "default_icon": "icon.png",
